@@ -1,0 +1,31 @@
+.App {
+  padding: 0 30px;
+}
+
+.message {
+  margin-bottom: 30px;
+}
+
+.message:nth-child(odd) {
+  margin-right: 5%;
+}
+
+.message:nth-child(even) {
+  margin-left: 5%;
+}
+
+.message__author {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.message__text {
+  border-radius: 10px;
+  background-color: #eee;
+  padding: 20px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-wrap {
+  margin-bottom: 30px;
+}
