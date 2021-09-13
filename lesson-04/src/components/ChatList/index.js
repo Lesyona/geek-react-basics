@@ -1,16 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
 
 export default function ChatList({ chats }) {
     return (
         <List>
             {chats.map(chat => (
                 <ListItem key={chat.id}>
-                    <ListItemText
-                        primary={chat.name}
-                    />
+                    <Link to={`/chats/${chat.id}`}>{chat.name}</Link>
                 </ListItem>
             ))}
         </List>

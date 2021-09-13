@@ -3,7 +3,7 @@ import { useState, useRef } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-export default function Form({ setMessageList }) {
+export default function Form({ formOnSubmit }) {
     const [inputTextMessage, setInputTextMessage] = useState('');
     const inputRef = useRef(null);
 
@@ -11,24 +11,24 @@ export default function Form({ setMessageList }) {
         setInputTextMessage(event.target.value);
     }
 
-    const sendMessage = (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
-        setMessageList(messageList => [...messageList, { text: inputTextMessage, author: 'HUMAN', id: `mess-${Date.now()}` }]);
+        formOnSubmit(inputTextMessage);
         setInputTextMessage("");
         inputRef.current.focus();
     }
 
     return (
-        <form className="form-wrap" action="/" onSubmit={sendMessage}>
+        <form className="form-wrap" action="/" onSubmit={handleSubmit}>
             <TextField
-                autoFocus={true}
+                autoFocus
                 inputRef={inputRef}
                 type="text"
                 value={inputTextMessage}
                 onChange={getInputTextMessage}
                 label="Your message here"
                 margin={"normal"}
-                fullWidth={true}
+                fullWidth
             />
             <br/>
             <Button type="submit" variant="contained" color="primary">
