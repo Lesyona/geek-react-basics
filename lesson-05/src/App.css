@@ -1,0 +1,31 @@
+.App {
+  padding: 0 30px;
+}
+
+.top-menu {
+  padding: 20px 0 0 20px;
+}
+
+.top-menu a {
+  margin: 0 10px;
+}
+
+.message {
+  margin-bottom: 30px;
+}
+
+.message__author {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.message__text {
+  border-radius: 10px;
+  background-color: #eee;
+  padding: 20px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-wrap {
+  margin-bottom: 30px;
+}
